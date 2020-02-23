@@ -1,0 +1,59 @@
+.markdown-wrapper {
+
+
+  .markdown-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  .edit-box {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    line-height: 1.6;
+    padding: 1rem 1rem 10rem 1.5rem;
+    resize: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    word-wrap: break-word;
+    letter-spacing: 1px;
+    border: 1px solid red;
+    resize: both;
+    overflow-y: scroll;
+  }
+
+  .edit-box::-webkit-scrollbar {
+    width: 100px;
+    height: 200px;
+  }
+
+  .divider {
+    width: 0.5rem;
+    background: #eee;
+    cursor: w-resize;
+    user-select: none;
+    transition: background-color 0.3s;
+    resize: both;
+    overflow: auto;
+  }
+
+  // .divider::-webkit-scrollbar {
+  //   width: 200px;
+  //   height: 200px;
+  // }
+
+  .preview {
+    flex: 1;
+    border: 1px solid blue;
+    width: 500px;
+    height: 100%;
+    resize: both;
+
+  }
+
+
+
+}

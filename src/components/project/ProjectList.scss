@@ -1,0 +1,53 @@
+.project-list-page {
+  display: flex;
+  // align-items: center;
+  justify-content: space-around;
+  // flex-direction: column;
+
+  .list {
+    width: 40%;
+    list-style: none;
+    margin-top: 20px;
+
+    li {
+      margin-top: 20px;
+      height: 350px;
+      border: 1px solid red;
+
+      .list-title {
+        padding: 10px;
+      }
+
+      .list-context {
+        text-align: center;
+      }
+
+      .list-footer {
+
+        .list-charts {
+          margin-left: 50px;
+          width: 90%;
+          border: 1px solid blue;
+          height: 200px;
+
+          .charts {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+
+  .project-list-container {
+    margin-top: 40px;
+
+    .project-list-menu {
+      position: fixed;
+      left: 80%;
+      border: 1px solid darkcyan;
+      height: 500px;
+      width: 300px;
+    }
+  }
+}

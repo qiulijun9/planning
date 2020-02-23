@@ -1,0 +1,1 @@
+export const userRule = /^[a-zA-Z-_]{1, 10}$/;
