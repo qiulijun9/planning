@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import ReactEcharts from "echarts-for-react";
+import echarts from "echarts";
 // import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/line";
 import "echarts/lib/component/tooltip";
 import "echarts/lib/component/title";
 import "./Project.scss";
+import mapData from "./data.json";
 
 const Project = () => {
   const { projectId } = useParams();
@@ -15,67 +17,55 @@ const Project = () => {
     routerHistory.push(`/editProject/${projectId}`);
   };
   const [module, setModule] = useState([{ name: "111" }]);
-  const option = {
+  let option = {
     tooltip: {
-      trigger: "axis"
+      trigger: "item",
+      formatter: "{b}<br/>{c}"
     },
-    xAxis: {
-      type: "category",
-      boundaryGap: false,
-      data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-    },
-    yAxis: {
-      type: "value",
-      axisLabel: {
-        formatter: "{value} °C"
+    visualMap: {
+      min: 800,
+      max: 50000,
+      text: ["High", "Low"],
+      realtime: false,
+      calculable: true,
+      inRange: {
+        color: ["lightskyblue", "yellow", "orangered"]
       }
     },
     series: [
       {
-        name: "最高气温",
-        type: "line",
-        data: [11, 11, 15, 13, 12, 13, 10],
-        markPoint: {
-          data: [
-            { type: "max", name: "最大值" },
-            { type: "min", name: "最小值" }
-          ]
+        type: "map",
+        mapType: "BJ",
+        // roam: false,
+        label: {
+          show: true
         },
-        markLine: {
-          data: [{ type: "average", name: "平均值" }]
-        }
-      },
-      {
-        name: "最低气温",
-        type: "line",
-        data: [1, -2, 2, 5, 3, 2, 0],
-        markPoint: {
-          data: [{ name: "周最低", value: -2, xAxis: 1, yAxis: -1.5 }]
-        },
-        markLine: {
-          data: [
-            { type: "average", name: "平均值" },
-            [
-              {
-                symbol: "none",
-                x: "90%",
-                yAxis: "max"
-              },
-              {
-                symbol: "circle",
-                label: {
-                  position: "start",
-                  formatter: "最大值"
-                },
-                type: "max",
-                name: "最高点"
-              }
-            ]
-          ]
-        }
+        data: [
+          { name: "延庆县", value: 20057.34 },
+          { name: "怀柔区", value: 15477.48 },
+          { name: "密云县", value: 31686.1 },
+          { name: "昌平区", value: 6992.6 },
+          { name: "顺义区", value: 44045.49 },
+          { name: "平谷区", value: 40689.64 },
+          { name: "门头沟区", value: 37659.78 },
+          { name: "海淀区", value: 45180.97 },
+          { name: "朝阳区", value: 55204.26 },
+          { name: "石景山区", value: 21900.9 },
+          { name: "西城区", value: 4918.26 },
+          { name: "东城区", value: 5881.84 },
+          { name: "玄武区", value: 4178.01 },
+          { name: "崇文区", value: 2227.92 },
+          { name: "丰台区", value: 2180.98 },
+          { name: "通州区", value: 9172.94 },
+          { name: "房山区", value: 3368 },
+          { name: "大兴区", value: 806.98 }
+        ]
       }
     ]
   };
+
+  function createModel() {}
+  echarts.registerMap("BJ", mapData);
   return (
     <div className="project-wrapper">
       <header className="project-title"></header>
@@ -89,10 +79,16 @@ const Project = () => {
               className="charts"
             />
           </div>
-          <div className="create-project">新建模块</div>
+          <div className="create-project">
+            <button className="create-projct-btn" onClick={createModel}>
+              新建模块dddeee
+            </button>
+          </div>
         </div>
         <div className="project-box" onClick={editProject}>
-          111
+          <div className="project-name">模块名称</div>
+          <div className="project-describe">描述描述描述描述描述</div>
+          <div className="project-tag">tag</div>
         </div>
         <div className="project-box">111</div>
         <div className="project-box">111</div>

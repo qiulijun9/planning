@@ -14,9 +14,8 @@
     width: 60%;
     min-width: 800px;
     margin: 0 auto;
-    background-color: #ccc;
+    background-color: rgb(243, 237, 237);
   }
-
 
   .project-dashboard {
     width: 100%;
@@ -28,21 +27,66 @@
 
   .project-charts {
     width: 500px;
-    height: 300px
+    height: 300px;
   }
 
   .create-project {
-    border: 1px solid blue;
     width: 100px;
     height: 80px;
     text-align: center;
   }
 
+  .create-projct-btn {
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: rgb(62, 139, 202);
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(77, 193, 255, 0.3) 20%,
+      rgba(77, 193, 255, 0.4) 30%,
+      rgba(77, 193, 255, 0.5) 40%,
+      rgba(77, 193, 255, 0.8) 50%,
+      rgba(77, 193, 255, 0.5) 60%,
+      rgba(77, 193, 255, 0.4) 70%,
+      rgba(35, 198, 200, 0.3) 80%,
+      rgba(0, 0, 0, 0) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
   .project-box {
     flex: 1;
     min-width: 45%;
-    height: 250px;
+    height: 200px;
     margin: 50px 20px;
-    border: 1px solid red;
+    border: 1px solid #000;
+  }
+
+  .project-name {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    color: rgb(62, 139, 202);
+    font-weight: 600;
+  }
+
+  .project-describe {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 50px;
+    color: rgb(126, 157, 182);
+  }
+
+  .project-tag {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 50px;
+    color: rgb(192, 192, 116);
   }
 }
